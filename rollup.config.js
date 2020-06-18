@@ -44,7 +44,7 @@ export default [
     output: {
       format: "esm",
       // file: `dist/utils.js`
-      dir: `dist/cls`
+      dir: `dist/`
     },
     plugins: [
       replace({ "process.env.NODE_ENV": "production" }),
@@ -64,7 +64,7 @@ export default [
     output: [
       {
         format: "cjs",
-        dir: "dist/vue/"
+        dir: "dist/"
         // file: "dist/vue-xlsx.cjs.js"
       }
     ],
