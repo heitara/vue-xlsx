@@ -41,7 +41,7 @@ export default {
   },
   methods: {
     async load() {
-      const { writeFile } = await import("xlsx");
+      const { writeFile } = await import("xlsx-style");
       this._writeFile = writeFile;
       this.loaded = true;
     },

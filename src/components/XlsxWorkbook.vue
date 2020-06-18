@@ -18,7 +18,7 @@ export default {
       globalPolyfill();
       const {
         utils: { book_new, book_append_sheet }
-      } = await import("xlsx");
+      } = await import("xlsx-style");
       this._book_new = book_new;
       this._book_append_sheet = book_append_sheet;
       this._workbook = this._book_new();

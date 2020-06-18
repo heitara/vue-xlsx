@@ -20,7 +20,7 @@ export default {
     async load() {
       const {
         utils: { sheet_to_html }
-      } = await import("xlsx");
+      } = await import("xlsx-style");
       this._sheet_to_html = sheet_to_html;
       this.loaded = true;
     },

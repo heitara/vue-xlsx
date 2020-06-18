@@ -19,7 +19,8 @@ const mapEntry = (f, ext, folder) => ({
   external: ["vue", "xlsx"],
   output: {
     format: "esm",
-    file: `dist/${folder}${f.replace(ext, "js")}`
+    // file: `dist/${folder}${f.replace(ext, "js")}`,
+    dir: `dist/${folder}`
   },
   plugins: [
     replace({ "process.env.NODE_ENV": "production" }),
@@ -42,7 +43,8 @@ export default [
     external: ["vue", "xlsx"],
     output: {
       format: "esm",
-      file: `dist/utils.js`
+      // file: `dist/utils.js`
+      dir: `dist/cls`
     },
     plugins: [
       replace({ "process.env.NODE_ENV": "production" }),
@@ -62,7 +64,8 @@ export default [
     output: [
       {
         format: "cjs",
-        file: "dist/vue-xlsx.cjs.js"
+        dir: "dist/vue/"
+        // file: "dist/vue-xlsx.cjs.js"
       }
     ],
     plugins: [
@@ -80,32 +83,33 @@ export default [
         runtimeHelpers: true
       })
     ]
-  },
-  {
-    input: "src/index.js",
-    external: ["vue", "xlsx"],
-    output: {
-      format: "umd",
-      name: "vue-xlsx",
-      file: "dist/vue-xlsx.umd.js",
-      globals: {
-        vue: "Vue"
-      }
-    },
-    plugins: [
-      replace({ "process.env.NODE_ENV": "production" }),
-      node({
-        extensions: [".vue", ".js"]
-      }),
-      cjs(),
-      vue({
-        css: true,
-        compileTemplate: true
-      }),
-      babel({
-        exclude: "node_modules/**",
-        runtimeHelpers: true
-      })
-    ]
   }
+  // {
+  //   input: "src/index.js",
+  //   external: ["vue", "xlsx"],
+  //   output: {
+  //     format: "umd",
+  //     name: "vue-xlsx",
+  //     // file: "dist/vue-xlsx.umd.js",
+  //     dir: `dist/umd`,
+  //     globals: {
+  //       vue: "Vue"
+  //     }
+  //   },
+  //   plugins: [
+  //     replace({ "process.env.NODE_ENV": "production" }),
+  //     node({
+  //       extensions: [".vue", ".js"]
+  //     }),
+  //     cjs(),
+  //     vue({
+  //       css: true,
+  //       compileTemplate: true
+  //     }),
+  //     babel({
+  //       exclude: "node_modules/**",
+  //       runtimeHelpers: true
+  //     })
+  //   ]
+  // }
 ];

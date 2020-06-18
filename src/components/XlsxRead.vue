@@ -35,7 +35,7 @@ export default {
     async load() {
       const { globalPolyfill } = require("../polyfills");
       globalPolyfill();
-      const { read } = await import("xlsx");
+      const { read } = await import("xlsx-style");
       this._read = read;
       this.libLoaded = true;
       this._callbackQueue = [];
